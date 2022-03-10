@@ -9,20 +9,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="results">0</h1>
-        <div className="grid"></div>
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
+        <div className="divScore">
+          <p className="score">
+            <span>Score: </span> <span id="scoreElement">0</span>
+          </p>
+          <canvas></canvas>
+        </div>
       </header>
     </div>
   );

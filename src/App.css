@@ -13,6 +13,19 @@
   }
 }
 
+.score {
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  left: 10px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.divScore {
+  position: relative;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,6 +35,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin: 0;
+  display: flex;
 }
 
 .App-link {
@@ -35,36 +50,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.grid {
-  width: 500px;
-  height: 500px;
-  border: solid white 1px;
-  border-radius: 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.grid div {
-  width: 20px;
-  height: 20px;
-  /* border: solid white 0.01px; */
-}
-
-.invader {
-  background-color: purple;
-  border-radius: 10px;
-}
-
-.shooter {
-  background-color: green;
-}
-
-.laser {
-  background-color: orange;
-}
-
-.boom {
-  background-color: red;
 }
