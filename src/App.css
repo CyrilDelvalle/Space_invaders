@@ -22,7 +22,17 @@
   font-size: 14px;
 }
 
+.message {
+  /* Center vertically and horizontally */
+  position: absolute;
+  text-align: center;
+}
+
 .divScore {
+  position: relative;
+}
+
+.divMessage {
   position: relative;
 }
 

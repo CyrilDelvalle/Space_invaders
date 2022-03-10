@@ -8,10 +8,14 @@ import createParticles from "./createParticles";
 import removeInvadersProjectiles from "./removeInvadersProjectiles";
 import playerShot from "./playerShot";
 import invaderShot from "./invaderShot";
+import showMessage from "./showMessage";
+import displayScore from "./displeyScore";
 
 const script = () => {
   const canvas = document.querySelector("canvas");
   let scoreElement = document.getElementById("scoreElement");
+  let messageElement = document.getElementById("messageElement");
+
   const context = canvas?.getContext("2d");
 
   if (canvas) {
@@ -24,6 +28,8 @@ const script = () => {
   const grids: Grid[] = [];
   const invaderProjectiles: InvaderProjectile[] = [];
   let particles: Particle[] = [];
+
+  showMessage(messageElement, "Game start !");
 
   const keys = {
     ArrowLeft: {
@@ -52,7 +58,10 @@ const script = () => {
   }
 
   const animate = () => {
-    if (!game.active) return;
+    if (!game.active) {
+      showMessage(messageElement, "Game over...");
+      return;
+    }
     if (canvas && player.position && context) {
       requestAnimationFrame(animate);
       context.fillStyle = "black";
@@ -95,8 +104,6 @@ const script = () => {
               player.position.x &&
             invaderProjectile.position.x <= player.position.x + player.width
           ) {
-            console.log("you lose");
-
             setTimeout(() => {
               invaderProjectiles.splice(index, 1);
               player.opacity = 0;
@@ -167,6 +174,8 @@ const script = () => {
                     gridIndex
                   ));
                 }, 0);
+
+                displayScore(messageElement, score);
               }
             }
           });

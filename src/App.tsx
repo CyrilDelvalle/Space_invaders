@@ -6,6 +6,7 @@ function App() {
   useEffect(() => {
     script();
   }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,6 +16,9 @@ function App() {
           </p>
           <canvas></canvas>
         </div>
+        <p className="message">
+          <span id="messageElement"></span>
+        </p>
       </header>
     </div>
   );
