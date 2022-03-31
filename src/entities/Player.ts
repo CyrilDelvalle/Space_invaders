@@ -1,6 +1,8 @@
+import Position from "../interfaces/Position";
+
 class Player {
-  position: { x: number; y: number } | undefined;
-  velocity: { x: number; y: number };
+  position: Position | undefined;
+  velocity: Position;
   width: number;
   height: number;
   opacity: number;

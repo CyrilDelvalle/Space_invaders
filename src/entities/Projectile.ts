@@ -1,11 +1,18 @@
+import Position from "../interfaces/Position";
+
+interface ProjectileProps {
+  position: Position;
+  velocity: Position;
+  context: CanvasRenderingContext2D;
+}
 class Projectile {
-  position: { x: number; y: number } | undefined;
-  velocity: { x: number; y: number };
+  position: Position | undefined;
+  velocity: Position;
   radius: number;
   draw: Function;
   update: Function;
 
-  constructor({ position, velocity, context }: any) {
+  constructor({ position, velocity, context }: ProjectileProps) {
     this.position = position;
     this.velocity = velocity;
     this.radius = 3;

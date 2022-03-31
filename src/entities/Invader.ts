@@ -1,8 +1,9 @@
+import Position from "../interfaces/Position";
 import InvaderProjectile from "./InvaderProjectile";
 
 class Invader {
-  position: { x: number; y: number } | undefined;
-  velocity: { x: number; y: number };
+  position: Position | undefined;
+  velocity: Position;
   width: number;
   height: number;
   draw: Function;
@@ -57,7 +58,7 @@ class Invader {
     };
 
     this.shoot = (invaderProjectiles: any) => {
-      if (this.position) {
+      if (this.position && context) {
         invaderProjectiles.push(
           new InvaderProjectile({
             position: {

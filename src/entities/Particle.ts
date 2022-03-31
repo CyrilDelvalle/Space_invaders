@@ -1,6 +1,17 @@
+import Position from "../interfaces/Position";
+
+interface ParticleProps {
+  position: Position;
+  velocity: Position;
+  context: CanvasRenderingContext2D;
+  radius: number;
+  color: string;
+  fades: number;
+}
+
 class Particle {
-  position: { x: number; y: number } | undefined;
-  velocity: { x: number; y: number };
+  position: Position | undefined;
+  velocity: Position;
   color: string;
   opacity: number;
   radius: number;
@@ -8,7 +19,14 @@ class Particle {
   draw: Function;
   update: Function;
 
-  constructor({ position, velocity, context, radius, color, fades }: any) {
+  constructor({
+    position,
+    velocity,
+    context,
+    radius,
+    color,
+    fades,
+  }: ParticleProps) {
     this.position = position;
     this.velocity = velocity;
     this.radius = radius;

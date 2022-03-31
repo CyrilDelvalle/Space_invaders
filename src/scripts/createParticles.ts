@@ -1,4 +1,13 @@
 import Particle from "../entities/Particle";
+import Position from "../interfaces/Position";
+
+interface createParticleProps {
+  object: any;
+  color: string;
+  fades: number;
+  context: CanvasRenderingContext2D;
+  particles: Particle[];
+}
 
 const createParticles = ({ object, color, fades, context, particles }: any) => {
   for (let i = 0; i < 15; i++) {

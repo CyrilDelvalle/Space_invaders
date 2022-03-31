@@ -220,7 +220,7 @@ const script = () => {
         keys.ArrowRight.pressed = true;
         break;
       case " ":
-        if (player.position) {
+        if (player.position && context) {
           projectiles.push(
             new Projectile({
               position: {

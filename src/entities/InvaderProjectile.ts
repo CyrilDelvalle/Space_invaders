@@ -1,13 +1,20 @@
+import Position from "../interfaces/Position";
+
+interface InvaderProjectileProps {
+  position: Position;
+  velocity: Position;
+  context: CanvasRenderingContext2D;
+}
 class InvaderProjectile {
-  position: { x: number; y: number } | undefined;
-  velocity: { x: number; y: number };
+  position: Position | undefined;
+  velocity: Position;
   radius: number;
   width: number;
   height: number;
   draw: Function;
   update: Function;
 
-  constructor({ position, velocity, context }: any) {
+  constructor({ position, velocity, context }: InvaderProjectileProps) {
     this.position = position;
     this.velocity = velocity;
     this.width = 3;

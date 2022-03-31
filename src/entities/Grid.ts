@@ -1,15 +1,10 @@
+import Position from "../interfaces/Position";
 import Invader from "./Invader";
 
 class Grid {
-  position: {
-    x: number;
-    y: number;
-  };
+  position: Position;
 
-  velocity: {
-    x: number;
-    y: number;
-  };
+  velocity: Position;
 
   invaders: Invader[];
   width: number;

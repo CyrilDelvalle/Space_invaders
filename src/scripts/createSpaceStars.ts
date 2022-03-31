@@ -19,6 +19,7 @@ const createSpaceStars = (
         context,
         radius: Math.random() * 3,
         color: "white",
+        fades: 0,
       })
     );
   }
